@@ -1,0 +1,321 @@
+/* Mobile First Approach - Red Theme */
+
+/* Base mobile styles (up to 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        border-radius: var(--border-radius);
+        padding: 0;
+        backdrop-filter: blur(20px);
+        background: rgba(153, 27, 27, 0.95);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0;
+    }
+
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    #search-input {
+        min-width: auto;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .task-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .task-actions {
+        align-self: stretch;
+        justify-content: space-between;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .data-actions {
+        flex-direction: column;
+    }
+
+    .modal {
+        width: 95%;
+        margin: 1rem;
+    }
+
+    .activity-chart {
+        height: 150px;
+    }
+
+    .task-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet styles (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .controls {
+        flex: 1;
+        justify-content: flex-end;
+    }
+
+    .task-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .activity-chart {
+        height: 180px;
+    }
+
+    .header .container {
+        padding: 1rem 2rem;
+    }
+}
+
+/* Desktop styles (1024px and up) */
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .settings-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .activity-chart {
+        height: 200px;
+    }
+
+    .header .container {
+        padding: 1rem 2rem;
+    }
+}
+
+/* Large desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .header .container {
+        padding: 1.5rem 2rem;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .stat-number {
+        font-weight: 700;
+    }
+
+    .header h1 {
+        -webkit-text-stroke: 0.5px transparent;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .task-card:hover,
+    .stat-card:hover,
+    .btn:hover {
+        transform: none;
+    }
+
+    .cap-progress::after {
+        animation: none;
+    }
+
+    .nav-link::before,
+    .btn::before {
+        display: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --primary-color: #990000;
+        --primary-dark: #660000;
+        --text-primary: #000000;
+        --border-color: #000000;
+        --shadow: 0 0 0 2px #000000;
+    }
+
+    .task-card {
+        border: 2px solid var(--border-color);
+    }
+
+    .header {
+        background: #660000;
+    }
+}
+
+/* Dark mode support with red theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #ef4444;
+        --primary-dark: #dc2626;
+        --primary-darker: #fca5a5;
+        --primary-light: #f87171;
+        --primary-lighter: #fecaca;
+        --secondary-color: #94a3b8;
+        --success-color: #10b981;
+        --warning-color: #f59e0b;
+        --error-color: #ef4444;
+        --background-color: #0f172a;
+        --surface-color: #1e293b;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+        --border-color: #334155;
+    }
+
+    body {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 50%, #1e293b 100%);
+    }
+
+    .header {
+        background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #b91c1c 100%);
+    }
+
+    .stat-card,
+    .task-form,
+    .setting-group,
+    .modal,
+    .chart-section,
+    .cap-section {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border-color: #475569;
+    }
+
+    .contact-info {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    }
+
+    .empty-state {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        border-color: #475569;
+    }
+
+    #search-input,
+    .form-group input,
+    .form-group select,
+    .sort-container select {
+        background: #891515;
+        border-color: #ffffff;
+        color: var(--text-primary);
+    }
+
+    .task-card::before {
+        background: var(--gradient-primary);
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .nav-menu,
+    .footer,
+    .btn {
+        display: none;
+    }
+
+    .task-card {
+        break-inside: avoid;
+        border: 1px solid #ffffff;
+        box-shadow: none;
+    }
+
+    .section {
+        break-inside: avoid;
+    }
+}
