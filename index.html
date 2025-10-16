@@ -102,7 +102,7 @@
                             <label for="search-input" class="sr-only">Search tasks</label>
                             <input type="text" id="search-input" placeholder="Search with regex..." 
                                    aria-describedby="search-help">
-                            <button id="case-toggle" class="btn-secondary" aria-pressed="false">
+                            <button id="case-toggle" class="btn btn-secondary" aria-pressed="false">
                                 Case Sensitive
                             </button>
                         </div>
@@ -167,8 +167,8 @@
                     </div>
 
                     <div class="form-actions">
-                        <button type="submit" class="btn-primary">Add Task</button>
-                        <button type="reset" class="btn-secondary">Clear</button>
+                        <button type="submit" class="btn btn-primary">Add Task</button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
                     </div>
                 </form>
             </div>
@@ -179,31 +179,34 @@
             <div class="container">
                 <h2 id="settings-heading">Settings</h2>
                 
-                <div class="settings-grid">
-                    <div class="setting-group">
-                        <h3>Daily Time Cap</h3>
+                <div class="setting-group">
+                    <h3>Daily Time Management</h3>
+                    <div class="daily-cap-container">
                         <label for="daily-cap">Maximum minutes per day:</label>
-                        <input type="number" id="daily-cap" min="0" step="30" value="480">
-                        <button id="save-cap" class="btn-primary">Save Cap</button>
-                    </div>
-
-                    <div class="setting-group">
-                        <h3>Duration Units</h3>
-                        <label for="duration-units">Display units:</label>
-                        <select id="duration-units">
-                            <option value="minutes">Minutes</option>
-                            <option value="hours">Hours</option>
-                        </select>
-                    </div>
-
-                    <div class="setting-group">
-                        <h3>Data Management</h3>
-                        <div class="data-actions">
-                            <button id="export-btn" class="btn-secondary">Export JSON</button>
-                            <button id="import-btn" class="btn-secondary">Import JSON</button>
-                            <input type="file" id="import-file" accept=".json" style="display: none;">
-                            <button id="clear-data" class="btn-danger">Clear All Data</button>
+                        <div class="daily-cap-input-wrapper">
+                            <input type="number" id="daily-cap" min="0" step="30" value="480" 
+                                   placeholder="Enter minutes">
                         </div>
+                        <div class="daily-cap-units">
+                            <span>Equivalent to:</span>
+                            <span id="cap-hours-display">8 hours</span>
+                        </div>
+                        <div class="cap-value-display">
+                            <span>Current setting:</span>
+                            <span id="current-cap-value">480 minutes</span>
+                        </div>
+                    </div>
+                    <div class="save-cap-wrapper">
+                        <button id="save-cap" class="btn btn-primary">Save Cap</button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <h3>Data Management</h3>
+                    <div class="data-actions">
+                        <button id="export-btn" class="btn btn-secondary">Export JSON</button>
+                        <button id="import-btn" class="btn btn-secondary">Import JSON</button>
+                        <button id="clear-data" class="btn btn-danger">Clear All Data</button>
                     </div>
                 </div>
 
@@ -244,8 +247,8 @@
                     <div id="edit-tag-error" class="error-text"></div>
                 </div>
                 <div class="modal-actions">
-                    <button type="submit" class="btn-primary">Save Changes</button>
-                    <button type="button" class="btn-secondary" onclick="document.getElementById('edit-modal').close()">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('edit-modal').close()">
                         Cancel
                     </button>
                 </div>
