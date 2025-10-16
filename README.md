@@ -1,58 +1,91 @@
 # Campus Life Planner
 
-### Overview
-**Campus Life Planner** is a responsive, accessible, and mobile-first web app built using **vanilla HTML, CSS, and JavaScript**.  
-It helps students plan their campus life efficiently by tracking tasks, events, and study sessions with tags, durations, and deadlines.
-
-The app allows you to:
-- Add, edit, and delete tasks/events  
-- Search tasks using **live regex search**  
-- Sort tasks by title, date, or duration  
-- View stats such as total tasks, total duration, and a 7-day trend chart  
-- Persist data with **localStorage**  
-- Import/export task data as JSON  
-- Set and monitor study/time caps  
-- Navigate entirely via keyboard with accessible feedback  
+Campus Life Planner is designed to make student productivity effortless, accessible, and visually engaging.  
+Here’s everything it can do — organized to align with the project rubric:
 
 ---
 
-## Live Demo
-**GitHub Pages URL:**  
- [https://yourusername.github.io/campus-life-planner/](#)
-
-*(Replace with your actual GitHub Pages URL after deployment)*
-
----
-
-## Features
-
-| Category | Description |
-|-----------|-------------|
-| **Core Pages** | About, Dashboard, Tasks, Add/Edit Form, Settings |
-| **Regex Validation** | 4+ input rules including one advanced regex |
-| **Responsive Design** | Mobile-first layout, 3+ breakpoints |
-| **Persistence** | Auto-saves tasks in localStorage |
-| **Import/Export** | Validates and loads JSON data |
-| **Sorting & Filtering** | Sort by date/title/duration, live regex search |
-| **Stats Dashboard** | Total tasks, total duration, top tag, 7-day chart |
-| **Accessibility (a11y)** | Keyboard navigation, ARIA live, visible focus, semantic HTML |
-| **Unit Conversion** | Convert minutes ↔ hours |
-| **Settings** | Manage target caps and units |
-| **UX Polish** | Smooth animations, empty/error states |
+### Core Functionalities
+- **Task Dashboard:** View all your study sessions, deadlines, and campus activities at a glance.  
+- **Add, Edit, Delete Records:** Manage your tasks dynamically using in-app forms and validation.  
+- **Search & Filter:** Search by keywords or tags using regex-powered queries (e.g., `@tag:study`).  
+- **Total Time Tracker:** Automatically sums up total duration of all logged tasks.  
+- **Weekly Activity Chart:** Visual display of time spent each day.  
 
 ---
 
-## Data Model
+### Regex & Validation Features
+- **Regex Validation:** Prevents empty titles, enforces proper date format, and checks for duplicates.  
+- **Real-time Error Alerts:** Inline validation messages appear as you type.  
+- **Smart Search Engine:** Accepts regex-based input patterns for flexible record filtering.  
+- **Pattern Testing (tests.html):** Separate validation tester file to verify all regex rules.  
 
-Each task or event follows this structure:
+---
 
-```json
-{
-  "id": "task_001",
-  "title": "Study Group Session",
-  "dueDate": "2025-09-30",
-  "duration": 120,
-  "tag": "Academics",
-  "createdAt": "2025-09-20T12:00:00Z",
-  "updatedAt": "2025-09-20T12:00:00Z"
-}
+### Data Management
+- **LocalStorage Integration:** All tasks persist even after closing or refreshing the browser.  
+- **Import Data:** Load existing `.json` files from another device.  
+- **Export Data:** Download all records in structured JSON format.  
+- **Automatic Sync:** Changes instantly reflected on dashboard and chart.  
+
+---
+
+### Responsive Design
+- **Mobile-First Layout:** Works perfectly on phones, tablets, and desktops.  
+- **Adaptive Grid System:** Smooth transitions between screen sizes (min 3 breakpoints).  
+- **CSS Transitions & Hover Effects:** Subtle animations enhance the UI.  
+- **Accessible Font Scaling:** Uses `clamp()` for responsive text resizing.  
+
+---
+
+### Accessibility Features
+- **Screen Reader Announcements:** Uses ARIA live regions to announce actions (e.g., “Task added”).  
+- **Keyboard Navigation:** Navigate all buttons and inputs using `Tab`, `Enter`, and shortcut keys.  
+- **ARIA Roles & Labels:** Added to all interactive and feedback elements.  
+- **Skip to Content Link:** Allows quick jump to the main section.  
+- **High Contrast Theme:** Meets WCAG AA color-contrast standards.  
+
+---
+
+### Settings Module
+- **Time Cap Setting:** Define your daily or weekly study limit.  
+- **Progress Feedback:** Announces how much time remains or if target exceeded.  
+- **Persistent Preferences:** All settings saved automatically in localStorage.  
+
+---
+
+### Dashboard Metrics
+- **Total Tasks:** Count of all entries logged.  
+- **Total Duration:** Combined minutes/hours of all tasks.  
+- **Most Frequent Tag:** Displays your most common activity type.  
+- **Visual Chart:** Compact bar graph using native JS and CSS grid.  
+
+---
+
+### Keyboard Shortcuts
+| Action | Shortcut |
+|---------|-----------|
+| Add new record | `Alt + N` |
+| Edit record | `Alt + E` |
+| Delete record | `Alt + D` |
+| Focus search bar | `/` |
+| Open Settings | `Alt + S` |
+| Return to Dashboard | `Alt + H` |
+| Navigate items | `Tab` / `Shift + Tab` |
+
+---
+
+### Testing Tools
+- **tests.html:** Verifies all regex and validation patterns.  
+- **Manual Testing Scenarios:** Includes sample seed data in `seed.json`.  
+- **Console Logging (Dev Mode):** Clean debugging messages for developers.  
+
+---
+
+### Bonus Enhancements
+- **Dark/Light Mode Toggle** *(future-ready placeholder in settings.js)*  
+- **Tag-based Filtering:** Type `@tag:work` or `@tag:study` to instantly filter.  
+- **Category Analytics:** Planned for future dashboard updates.  
+- **Animated Status Alerts:** ARIA messages fade in/out gracefully.  
+
+---
