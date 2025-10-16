@@ -1,5 +1,11 @@
 # Campus Life Planner
 
+**GitHub page website deployment**
+/ https://andrewthonriem.github.io/frontend-web-dev-summative-Andrew_Thon_Riem_Alier/
+
+**Youtube Video link**
+/ https://youtu.be/7qSOG3BeUXs
+
 Campus Life Planner is designed to make student productivity effortless, accessible, and visually engaging.  
 Here’s everything it can do — organized to align with the project rubric:
 
